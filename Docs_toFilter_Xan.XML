@@ -1,0 +1,80 @@
+<doc>
+    <header>
+    Nara Server Setup
+    </header>
+    <body>
+        Tried to install docker container from rasa/rasa[Link1]. 
+        
+        Fixed error from attempt by installing Python3.8 [Link2].
+            $ sudo apt update && sudo apt upgrade
+            $ sudo apt install software-properties-common -y
+            $ sudo add-apt-repository ppa:deadsnakes/ppa -y
+            $ sudo apt update
+            $ sudo apt install python3.8 -y
+            $ python3.8 --version
+        
+        On the server I setup new users[Link3].
+            $ sudo adduser "userNameHere"
+        or Make it all in one line [Link5]
+            $ sudo useradd -p $(openssl passwd -1 "password") "username"
+        
+        Also looked up how to change password for user[Link4].
+            $ sudo passwd "username"
+        Or for users
+            $ passwd
+            
+        To make date be used for a file name start with echoing it[Link6] 
+            
+            
+        Trying to share full server files using SMB [Link7]
+            $ sudo apt install samba
+            $ sudo nano /etc/samba/smb.conf
+                [share]
+                    comment = TacticleCube File share, for [USER] password only.
+                    path = /home/[USER]/Share
+                    browsable = yes
+                    read only = no
+            $ mkdir /home/[USER]/Share
+            $ sudo chown [USER_NAME]:[USER_GROUP] /home/[USER]/Share
+            $ sudo smbcontrol smbd reload-config
+            $ sudo systemctl restart smbd.service nmbd.service
+            $ service smbd start
+            $ sudo smbpasswd -a [USERNAME]
+            $ [PASSWORD]
+        You will need to check workgroup name [Link8]
+            WORKGROUP
+        
+        Made two new projects in tacticlecube/projects
+            XanNava_Working
+            XanNava_Working_Library
+        
+        Setting up wiregaurd service.[Link9]
+            server$ sudo apt install wireguard
+        Install Java on local computer(restart terminal after install) 
+        https://www.java.com/en/download/
+        https://www.oracle.com/java/technologies/downloads/
+        Or download the wireguard for your OS(https://www.wireguard.com/install/)
+            local$ sudo apt install wireguard
+            or https://formulae.brew.sh/formula/wireguard-tools
+        create keys
+            local$ wg genkey | tee [privatekey_USER_COMPUTER] | wg pubkey > [pubkey_USER_COMPUTER]
+        wg genkey | tee privatekey_xannava_vcsd | wg pubkey_xannava_vcsd
+        https://superuser.com/questions/174297/how-can-i-get-an-address-bar-in-finder
+        https://techstacker.com/how-to-always-show-hidden-files-finder-macos/
+        Having an issue with this still. Can access google but nothing else.
+            $ cat /proc/sys/net/ipv4/ip_forward
+        https://help.keenetic.com/hc/en-us/articles/360010756119-Connecting-to-a-WireGuard-VPN-from-macOS
+            Added DNS address to client conf
+    </body>
+    <links>
+        [Link9] https://www.youtube.com/watch?v=bVKNSf1p1d0&ab_channel=TheDigitalLife
+        [Link8] https://www.lifewire.com/configure-os-x-workgroup-name-mountain-lion-2260208#:~:text=Confirm%20Workgroup%20Name,green%20dot%20next%20to%20it.
+        [Link7] https://trendoceans.com/how-to-set-up-samba-in-ubuntu-and-access-it-in-macos-windows/
+        [Link6] https://www.cyberciti.biz/faq/unix-linux-appleosx-bsd-shell-appending-date-to-filename/
+        [Link5] https://serverfault.com/questions/868092/how-do-i-create-a-user-with-a-password-in-one-line-in-bash-on-redhat
+        [Link4] https://www.cyberciti.biz/faq/change-a-user-password-in-ubuntu-linux-using-passwd/
+        [Link3] https://www.cyberciti.biz/faq/create-a-user-account-on-ubuntu-linux/
+        [Link2] https://www.linuxcapable.com/how-to-install-python-3-8-on-ubuntu-22-04-lts/
+        [Link1] https://hub.docker.com/r/rasa/rasa
+    </links>
+</doc>
