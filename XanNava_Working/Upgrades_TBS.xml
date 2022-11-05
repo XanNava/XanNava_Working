@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<todo>
+    - Microsoft.Extensions.Hosting implementation for Unity3D
+    https://github.com/amelkor/Microsoft.Extensions.Hosting.Unity
+</todo>

@@ -6,6 +6,8 @@ using PlayGroundLibrary.Models;
 
 namespace PlayGround;
 
+using PlayGroundLibrary.Models.GraceTesting;
+
 public class App
 {
     private Settings _settings;
@@ -27,6 +29,12 @@ public class App
         string message = _messages.Greeting(_settings.language);
         
         Console.WriteLine(message);
+
+        Testing tests = new Testing();
+        
+        //tests.RunMappingTests();
+        //tests.RunInjectionTests();
+        tests.RunKeyTests();
     }
     
     private Settings _ExtractSettings(

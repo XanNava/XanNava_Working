@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<body xmlns:xlink="http://www.w3.org/1999/xlink">
+    <section>
+        <link>https://blog.unity.com/manufacturing/pixyz-20221-improvements-across-3d-data-processing-workflows</link>
+        <description>Pixyz article going over data visualization integrations with 3D applications. </description>
+    </section>
+    
+
+    <section>
+        <link>https://www.youtube.com/watch?v=r8ReyXfryD0</link>
+        <description>Goes over the base C# service type projects templates.</description>
+        <headers>
+            <div>
+                <timestamp xlink:type="simple" xlink:href="https://youtu.be/r8ReyXfryD0">26:49-30:15</timestamp>
+                !! SSDT SQL server Data tools/template/project !!
+            </div>
+            <div>
+                <timestamp xlink:type="simple" xlink:href="https://youtu.be/r8ReyXfryD0">30:26-43:50</timestamp>
+                !! Worker Service description and examples !!
+            </div>
+        </headers>
+        <usefull_link>https://www.csharpprojects.com/</usefull_link>
+    </section>
+
+    <section>
+        <link>https://www.w3schools.com/xml/xml_xlink.asp</link>
+        <desc>Goes over the user of xlink for xml documents.</desc>
+    </section>
+
+ <section>
+  <link xlink="https://www.youtube.com/watch?v=aJjH18ciKT8"></link>
+  <desc>Goes over the new networking package for unity, and available training.</desc>
+ </section>
+</body>
